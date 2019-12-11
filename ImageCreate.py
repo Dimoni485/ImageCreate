@@ -23,7 +23,7 @@ h, w = 128, 112
 bg_colour = (0, 0, 0)
 x = 0
 z=0
-db = postgresql.open('pq://postgres:postgres@172.16.100.87:5432/otd')
+db = postgresql.open('pq://user:password@hostname/otd')
 pinstate = db.prepare("SELECT pintab.pin_state, par.sh_name, pintab.d_pin, pintab.state_udtm  FROM up_logistic_cur AS pintab, param AS par  WHERE pintab.pin_state = true AND par.adr = pintab.ob LIMIT 5")
 if len(pinstate()) > 0:
     
